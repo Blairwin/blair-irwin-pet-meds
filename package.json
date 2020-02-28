@@ -1,4 +1,5 @@
 {
+  "homepage": "https://Blairwin.github.io/blair-irwin-project-5",
   "name": "blair-irwin-project-5",
   "version": "0.1.0",
   "private": true,
@@ -6,11 +7,18 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.1",
     "@testing-library/user-event": "^7.2.1",
+    "firebase": "^7.9.1",
+    "font-awesome": "^4.7.0",
+    "gh-pages": "^2.2.0",
+    "moment": "^2.24.0",
     "react": "^16.13.0",
+    "react-datetime": "^2.16.3",
     "react-dom": "^16.13.0",
     "react-scripts": "3.4.0"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
