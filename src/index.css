@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100%;
 }
 
 code {
@@ -12,9 +13,31 @@ code {
     monospace;
 }
 
-.wrapper {
+header {
+  justify-content: center;
+}
+
+.mainWrapper,
+.footerWrapper {
   max-width: 1200px;
-  margin: 50px 5%;
+  margin: 0px 5% 0 5%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+}
+
+.mainWrapper {
+  min-height: 90vh;
+}
+
+.footerWrapper {
+  min-height: 10vh;
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }
 
 .centered {
@@ -28,7 +51,15 @@ input {
 
 h1 {
   font-family: 'Ubuntu';
-  text-align: center;
+  border-bottom: 5px solid aqua;
+}
+
+.h1Flex i {
+  margin: 10px 5px;
+}
+
+.h1Flex {
+  display: flex;
 }
 
 form {
@@ -46,6 +77,11 @@ li {
 
 button {
   font-family: lora;
+  margin: 15px 0 0 30%;
+}
+
+button i {
+  margin-right: 5px;
 }
 
 footer p {
