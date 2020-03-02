@@ -14,20 +14,25 @@ class App extends Component {
 			dosage: "",
 			notes: ""
 		};
+		
 	}
-
 	componentDidMount() {
 		const dbRef = firebase.database().ref();
 
-		dbRef.on("value", response => {
-			const newState = [];
+		dbRef.on("value", (response) => {
 			const data = response.val();
+			const newState = [];
+			
 			for (let key in data) {
-				newState.push({ key: key, name: data[key] });
+				const doses = {
+					key: key,
+					...data[key]
+				} 
+				newState.push(doses);
 			}
-			// 	this.setState({
-			// 		doses: newState
-			// });
+				this.setState({
+					doses: newState,
+			});
 		});
 	}
 
@@ -80,7 +85,7 @@ class App extends Component {
 						<header className="h1Flex">
 							<i className="fa fa-paw"></i>
 							<h1>Pet Meds Log</h1>
-							<i className="fa fa-paw"></i>
+							{/* <i className="fa fa-paw"></i> */}
 							{/* <img src="./assets/marleyCrossedPaws.jpg" alt="the cutest golden retriever puppy looking very smart while laying with his paws crossed on the couch"/> */}
 						</header>
 						<main>
@@ -103,7 +108,7 @@ class App extends Component {
 									<input
 										type="time"
 										id="time"
-										onChange={this.handleDateChange}
+										onChange={this.handleTimeChange}
 										value={this.state.time}
 									/>
 								</div>
@@ -145,7 +150,7 @@ class App extends Component {
 								</div>
 								<button onClick={this.handleClick} type="submit">
 									<i className="fa fa-paw"></i>
-									Add dose
+									Add Dose Above
 								</button>
 							</form>
 							<ul>
@@ -153,34 +158,21 @@ class App extends Component {
 									return (
 										<div>
 											<li key={dose.key}>
-												<p>
-													{dose.name} - {dose.key}
-													{dose.name}
-												</p>
+												<p className = "spaceAbove">Dose Number: {dose.length}</p>
+												<p><strong>Date:</strong> {dose.date}</p>
+												<p><strong>Time:</strong> {dose.time}</p>
+												<p><strong>Name:</strong> {dose.petName}</p>
+												<p><strong>Medication:</strong> {dose.medication}</p>
+												<p><strong>Dosage:</strong> {dose.dosage}</p>
+												<p><strong>Notes:</strong> {dose.notes}</p>
 												<button onClick={() => this.removeDose(dose.key)}>
 													<i className="fa fa-paw"></i>
-													Remove Dose
+													Remove Dose Above
 												</button>
 											</li>
 										</div>
 									);
 								})}
-								{/* {this.state.doses.map(dose => {
-								return (
-									<div>
-										<i className="fa fa-paw"></i>
-										<li key={dose.key}>
-											<p> */}
-								{/* {dose.name} - {dose.key} */}
-								{/* {dose.name}
-											</p>
-											<button onClick={() => this.removeDose(dose.key)}>
-												Remove Dose
-											</button>
-										</li>
-									</div>
-								);
-							})} */}
 							</ul>
 						</main>
 					</div>
