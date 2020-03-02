@@ -28,6 +28,7 @@ class App extends Component {
 					key: key,
 					...data[key]
 				} 
+
 				newState.push(doses);
 			}
 				this.setState({
@@ -95,7 +96,7 @@ class App extends Component {
 							{/* MAKE THE FORM A COMPONENT  */}
 							<form action="submit">
 								<div className="inputFlexParent">
-									<label htmlFor="date">Enter the date:</label>
+									<label htmlFor="date"><strong>Enter the date:</strong></label>
 									<input
 										type="date"
 										id="date"
@@ -104,7 +105,7 @@ class App extends Component {
 									/>
 								</div>
 								<div className="inputFlexParent">
-									<label htmlFor="time">Enter the time:</label>
+									<label htmlFor="time"><strong>Enter the time:</strong></label>
 									<input
 										type="time"
 										id="time"
@@ -113,7 +114,7 @@ class App extends Component {
 									/>
 								</div>
 								<div className="inputFlexParent">
-									<label htmlFor="petName">Pet's name:</label>
+									<label htmlFor="petName"><strong>Pet's name:</strong></label>
 									<input
 										type="text"
 										id="petName"
@@ -122,7 +123,7 @@ class App extends Component {
 									/>
 								</div>
 								<div className="inputFlexParent">
-									<label htmlFor="medication">Medication:</label>
+									<label htmlFor="medication"><strong>Medication:</strong></label>
 									<input
 										type="text"
 										id="medication"
@@ -131,7 +132,7 @@ class App extends Component {
 									/>
 								</div>
 								<div className="inputFlexParent">
-									<label htmlFor="dosage">Dosage:</label>
+									<label htmlFor="dosage"><strong>Dosage:</strong></label>
 									<input
 										type="text"
 										id="dosage"
@@ -140,7 +141,7 @@ class App extends Component {
 									/>
 								</div>
 								<div className="inputFlexParent">
-									<label htmlFor="notes">Notes:</label>
+									<label htmlFor="notes"><strong>Notes:</strong></label>
 									<input
 										type="text"
 										id="notes"
@@ -158,7 +159,6 @@ class App extends Component {
 									return (
 										<div>
 											<li key={dose.key}>
-												<p className = "spaceAbove">Dose Number: {dose.length}</p>
 												<p><strong>Date:</strong> {dose.date}</p>
 												<p><strong>Time:</strong> {dose.time}</p>
 												<p><strong>Name:</strong> {dose.petName}</p>
@@ -166,7 +166,6 @@ class App extends Component {
 												<p><strong>Dosage:</strong> {dose.dosage}</p>
 												<p><strong>Notes:</strong> {dose.notes}</p>
 												<button onClick={() => this.removeDose(dose.key)}>
-													<i className="fa fa-paw"></i>
 													Remove Dose Above
 												</button>
 											</li>
