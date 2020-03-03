@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/blair-irwin-project-5/precache-manifest.1c3e888e8a5bcf81473b1833cac25c5c.js"
+  "/blair-irwin-project-5/precache-manifest.28d7de0904234e0f36a569eaa9778277.js"
 );
 
 self.addEventListener('message', (event) => {

@@ -1,26 +1,27 @@
 {
   "files": {
-    "main.css": "/blair-irwin-project-5/static/css/main.6672efb1.chunk.css",
-    "main.js": "/blair-irwin-project-5/static/js/main.3de305a3.chunk.js",
-    "main.js.map": "/blair-irwin-project-5/static/js/main.3de305a3.chunk.js.map",
+    "main.css": "/blair-irwin-project-5/static/css/main.00dc6034.chunk.css",
+    "main.js": "/blair-irwin-project-5/static/js/main.7afa9719.chunk.js",
+    "main.js.map": "/blair-irwin-project-5/static/js/main.7afa9719.chunk.js.map",
     "runtime-main.js": "/blair-irwin-project-5/static/js/runtime-main.049ad5c1.js",
     "runtime-main.js.map": "/blair-irwin-project-5/static/js/runtime-main.049ad5c1.js.map",
     "static/css/2.97516602.chunk.css": "/blair-irwin-project-5/static/css/2.97516602.chunk.css",
-    "static/js/2.fae7b642.chunk.js": "/blair-irwin-project-5/static/js/2.fae7b642.chunk.js",
-    "static/js/2.fae7b642.chunk.js.map": "/blair-irwin-project-5/static/js/2.fae7b642.chunk.js.map",
+    "static/js/2.880d9e8f.chunk.js": "/blair-irwin-project-5/static/js/2.880d9e8f.chunk.js",
+    "static/js/2.880d9e8f.chunk.js.map": "/blair-irwin-project-5/static/js/2.880d9e8f.chunk.js.map",
     "index.html": "/blair-irwin-project-5/index.html",
-    "precache-manifest.1c3e888e8a5bcf81473b1833cac25c5c.js": "/blair-irwin-project-5/precache-manifest.1c3e888e8a5bcf81473b1833cac25c5c.js",
+    "precache-manifest.28d7de0904234e0f36a569eaa9778277.js": "/blair-irwin-project-5/precache-manifest.28d7de0904234e0f36a569eaa9778277.js",
     "service-worker.js": "/blair-irwin-project-5/service-worker.js",
     "static/css/2.97516602.chunk.css.map": "/blair-irwin-project-5/static/css/2.97516602.chunk.css.map",
-    "static/css/main.6672efb1.chunk.css.map": "/blair-irwin-project-5/static/css/main.6672efb1.chunk.css.map",
-    "static/js/2.fae7b642.chunk.js.LICENSE.txt": "/blair-irwin-project-5/static/js/2.fae7b642.chunk.js.LICENSE.txt",
-    "static/media/font-awesome.min.css": "/blair-irwin-project-5/static/media/fontawesome-webfont.fee66e71.woff"
+    "static/css/main.00dc6034.chunk.css.map": "/blair-irwin-project-5/static/css/main.00dc6034.chunk.css.map",
+    "static/js/2.880d9e8f.chunk.js.LICENSE.txt": "/blair-irwin-project-5/static/js/2.880d9e8f.chunk.js.LICENSE.txt",
+    "static/media/font-awesome.min.css": "/blair-irwin-project-5/static/media/fontawesome-webfont.fee66e71.woff",
+    "static/media/index.css": "/blair-irwin-project-5/static/media/marleyCrossedPaws.29d672eb.jpeg"
   },
   "entrypoints": [
     "static/js/runtime-main.049ad5c1.js",
     "static/css/2.97516602.chunk.css",
-    "static/js/2.fae7b642.chunk.js",
-    "static/css/main.6672efb1.chunk.css",
-    "static/js/main.3de305a3.chunk.js"
+    "static/js/2.880d9e8f.chunk.js",
+    "static/css/main.00dc6034.chunk.css",
+    "static/js/main.7afa9719.chunk.js"
   ]
 }
