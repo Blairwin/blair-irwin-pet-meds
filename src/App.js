@@ -1,4 +1,5 @@
 import React, { Component} from 'react';
+import swal from "sweetalert";
 import './App.css';
 import firebase from './firebaseApp';
 import FooterSection from "./FooterSection";
@@ -64,6 +65,9 @@ class App extends Component {
 
 	handleClick = event => {
 		event.preventDefault();
+		if(this.state.date ==="" || this.state.time === ""){
+		swal("Oh no!", "Please be sure to add a date and time", "info");
+		}else { 
 		const dbRef = firebase.database().ref();
 		dbRef.push(this.state);
 		this.setState({
@@ -74,7 +78,7 @@ class App extends Component {
 			dosage: "",
 			notes: ""
 		});
-	};
+	}};
 
 	removeDose(doseId) {
 		const dbRef = firebase.database().ref();
@@ -92,79 +96,21 @@ class App extends Component {
 								Enter the information below to save it to your pet's medication
 								log
 							</p>
-							<form action="submit">
-								<div className="inputFlexParent">
-									<label htmlFor="date">
-										<strong>Enter the date:</strong>
-									</label>
-									<input
-										type="date"
-										id="date"
-										onChange={this.handleDateChange}
-										value={this.state.date}
-									/>
-								</div>
-								<div className="inputFlexParent">
-									<label htmlFor="time">
-										<strong>Enter the time:</strong>
-									</label>
-									<input
-										type="time"
-										id="time"
-										onChange={this.handleTimeChange}
-										value={this.state.time}
-									/>
-								</div>
-								<div className="inputFlexParent">
-									<label htmlFor="petName">
-										<strong>Pet's name:</strong>
-									</label>
-									<input
-										type="text"
-										id="petName"
-										onChange={this.handlePetNameChange}
-										value={this.state.petName}
-									/>
-								</div>
-								<div className="inputFlexParent">
-									<label htmlFor="medication">
-										<strong>Medication:</strong>
-									</label>
-									<input
-										type="text"
-										id="medication"
-										onChange={this.handleMedicationChange}
-										value={this.state.medication}
-									/>
-								</div>
-								<div className="inputFlexParent">
-									<label htmlFor="dosage">
-										<strong>Dosage:</strong>
-									</label>
-									<input
-										type="text"
-										id="dosage"
-										onChange={this.handleDosageChange}
-										value={this.state.dosage}
-									/>
-								</div>
-								<div className="inputFlexParent">
-									<label htmlFor="notes">
-										<strong>Notes:</strong>
-									</label>
-									<input
-										type="text"
-										id="notes"
-										onChange={this.handleNotesChange}
-										value={this.state.notes}
-									/>
-								</div>
-								<button onClick={this.handleClick} type="submit">
-									<i className="fa fa-paw"></i>
-									Add Dose 
-									<i className="fa fa-paw"></i>
-								</button>
-							</form>
+							<FormSection 
+								handleClick={this.handleClick}
+								handleDateChange={this.handleDateChange}
+								handleTimeChange={this.handleTimeChange}
+								handlePetNameChange={this.handlePetNameChange}
+								handleMedicationChange={this.handleMedicationChange}
+								handleDosageChange={this.handleDosageChange}
+								handleNotesChange={this.handleNotesChange}
+								date={this.state.date}
+								time={this.state.time}
+								petName={this.state.petName}
+								medication={this.state.medication}
+								dosage={this.state.dosage}
+								notes={this.state.notes}
+							/>
 							<ul>
 								{this.state.doses.map(dose => {
 									return (
@@ -188,12 +134,14 @@ class App extends Component {
 												<p>
 													<strong>Notes:</strong> {dose.notes}
 												</p>
-												<button onClick={() => this.removeDose(dose.key)}>
-													Remove This Dose
-												</button>
+												<div className="buttonFlexParent">
+													<button onClick={() => this.removeDose(dose.key)}>
+														Remove This Dose
+													</button>
+												</div>
 											</li>
 										</div>
-									);
+									)
 								})}
 							</ul>
 						</main>
@@ -201,7 +149,7 @@ class App extends Component {
 				</div>
 				<FooterSection />
 			</div>
-		);
+		)
 	}
 }
 
