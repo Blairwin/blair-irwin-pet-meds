@@ -1,6 +1,9 @@
 import React, { Component} from 'react';
 import './App.css';
 import firebase from './firebaseApp';
+import FooterSection from "./FooterSection";
+import Header from "./Header";
+import FormSection from "./FormSection";
 
 class App extends Component {
 	constructor() {
@@ -83,20 +86,17 @@ class App extends Component {
 			<div className="App">
 				<div className="mainWrapper">
 					<div className="flexContainer">
-						<header className="h1Flex">
-							<i className="fa fa-paw"></i>
-							<h1>Pet Meds Log</h1>
-							{/* <i className="fa fa-paw"></i> */}
-							{/* <img src="./assets/marleyCrossedPaws.jpg" alt="the cutest golden retriever puppy looking very smart while laying with his paws crossed on the couch"/> */}
-						</header>
+						<Header />
 						<main>
 							<p className="centered">
-								Enter the information below to save it to your pet's medication log
+								Enter the information below to save it to your pet's medication
+								log
 							</p>
-							{/* MAKE THE FORM A COMPONENT  */}
 							<form action="submit">
 								<div className="inputFlexParent">
-									<label htmlFor="date"><strong>Enter the date:</strong></label>
+									<label htmlFor="date">
+										<strong>Enter the date:</strong>
+									</label>
 									<input
 										type="date"
 										id="date"
@@ -105,7 +105,9 @@ class App extends Component {
 									/>
 								</div>
 								<div className="inputFlexParent">
-									<label htmlFor="time"><strong>Enter the time:</strong></label>
+									<label htmlFor="time">
+										<strong>Enter the time:</strong>
+									</label>
 									<input
 										type="time"
 										id="time"
@@ -114,7 +116,9 @@ class App extends Component {
 									/>
 								</div>
 								<div className="inputFlexParent">
-									<label htmlFor="petName"><strong>Pet's name:</strong></label>
+									<label htmlFor="petName">
+										<strong>Pet's name:</strong>
+									</label>
 									<input
 										type="text"
 										id="petName"
@@ -123,7 +127,9 @@ class App extends Component {
 									/>
 								</div>
 								<div className="inputFlexParent">
-									<label htmlFor="medication"><strong>Medication:</strong></label>
+									<label htmlFor="medication">
+										<strong>Medication:</strong>
+									</label>
 									<input
 										type="text"
 										id="medication"
@@ -132,7 +138,9 @@ class App extends Component {
 									/>
 								</div>
 								<div className="inputFlexParent">
-									<label htmlFor="dosage"><strong>Dosage:</strong></label>
+									<label htmlFor="dosage">
+										<strong>Dosage:</strong>
+									</label>
 									<input
 										type="text"
 										id="dosage"
@@ -141,7 +149,9 @@ class App extends Component {
 									/>
 								</div>
 								<div className="inputFlexParent">
-									<label htmlFor="notes"><strong>Notes:</strong></label>
+									<label htmlFor="notes">
+										<strong>Notes:</strong>
+									</label>
 									<input
 										type="text"
 										id="notes"
@@ -151,22 +161,35 @@ class App extends Component {
 								</div>
 								<button onClick={this.handleClick} type="submit">
 									<i className="fa fa-paw"></i>
-									Add Dose Above
+									Add Dose 
+									<i className="fa fa-paw"></i>
 								</button>
 							</form>
 							<ul>
 								{this.state.doses.map(dose => {
 									return (
 										<div>
-											<li key={dose.key}>
-												<p><strong>Date:</strong> {dose.date}</p>
-												<p><strong>Time:</strong> {dose.time}</p>
-												<p><strong>Name:</strong> {dose.petName}</p>
-												<p><strong>Medication:</strong> {dose.medication}</p>
-												<p><strong>Dosage:</strong> {dose.dosage}</p>
-												<p><strong>Notes:</strong> {dose.notes}</p>
+											<li className="resultCard" key={dose.key}>
+												<p>
+													<strong>Date:</strong> {dose.date}
+												</p>
+												<p>
+													<strong>Time:</strong> {dose.time}
+												</p>
+												<p>
+													<strong>Name:</strong> {dose.petName}
+												</p>
+												<p>
+													<strong>Medication:</strong> {dose.medication}
+												</p>
+												<p>
+													<strong>Dosage:</strong> {dose.dosage}
+												</p>
+												<p>
+													<strong>Notes:</strong> {dose.notes}
+												</p>
 												<button onClick={() => this.removeDose(dose.key)}>
-													Remove Dose Above
+													Remove This Dose
 												</button>
 											</li>
 										</div>
@@ -176,17 +199,7 @@ class App extends Component {
 						</main>
 					</div>
 				</div>
-				<div className="footerWrapper">
-					<footer>
-						<p>
-							&copy; <a href="http://blaircodes.com">Blair Irwin</a> March 2020,
-							with thanks to{" "}
-							<a href="https://firebase.google.com/">
-								firebase <i className="fa fa-paw"></i>
-							</a>
-						</p>
-					</footer>
-				</div>
+				<FooterSection />
 			</div>
 		);
 	}
